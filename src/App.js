@@ -1,7 +1,38 @@
+import dashboardData from './data.json';
+import jeremyRobson from './images/image-jeremy.png';
+import classes from './App.module.css';
+
 function App() {
   return (
     <div className='App'>
-      <h1>First Commit</h1>
+      <main className={classes.main}>
+        <section className={classes.user__section}>
+          <div className={classes.user__profile}>
+            <img
+              src={jeremyRobson}
+              alt='Profile of Jeremy Robson'
+              className={classes.user__photo}
+            />
+            <div className={classes.user__info}>
+              <p>Report for</p>
+              <h1 className={classes.user__name}>Jeremy Robson</h1>
+            </div>
+          </div>
+          <nav>
+            <ul>
+              <li>
+                <button>Daily</button>
+              </li>
+              <li>
+                <button>Weekly</button>
+              </li>
+              <li>
+                <button>Monthly</button>
+              </li>
+            </ul>
+          </nav>
+        </section>
+      </main>
     </div>
   );
 }
