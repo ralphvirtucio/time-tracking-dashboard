@@ -1,0 +1,42 @@
+.card__container {
+  background-color: var(--primary-color-work);
+  border-radius: 12px;
+  position: relative;
+}
+
+.card__photo-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-inline: 1rem;
+}
+
+.card__content {
+  background-color: var(--neutral-color-2);
+  padding-inline: 2rem;
+  padding-block: 2rem;
+  border-radius: 12px;
+  position: absolute;
+  width: 100%;
+  top: 50px;
+}
+
+.card__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__title {
+  font-size: var(--fs-card-titles);
+  color: #fff;
+}
+
+.card__current-time {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: var(--fw-300);
+}
+
+.card__previous-stat {
+  color: var(--neutral-color-4);
+}

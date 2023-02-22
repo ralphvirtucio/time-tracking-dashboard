@@ -80,12 +80,12 @@ select {
 
   --primary-color-1: hsl(246, 80%, 60%);
 
-  --primary-color-2-work: hsl(15, 100%, 70%);
-  --primary-color-3-play: hsl(195, 74%, 62%);
-  --primary-color-4-study: hsl(348, 100%, 68%);
-  --primary-color-5-exercise: hsl(145, 58%, 55%);
-  --primary-color-6-exercise: hsl(264, 64%, 52%);
-  --primary-color-7-self-care: hsl(43, 84%, 65%);
+  --primary-color-work: hsl(15, 100%, 70%);
+  --primary-color-play: hsl(195, 74%, 62%);
+  --primary-color-study: hsl(348, 100%, 68%);
+  --primary-color-exercise: hsl(145, 58%, 55%);
+  --primary-color-exercise: hsl(264, 64%, 52%);
+  --primary-color-self-care: hsl(43, 84%, 65%);
 
   --neutral-color-1: hsl(226, 43%, 10%);
   --neutral-color-2: hsl(235, 46%, 20%);

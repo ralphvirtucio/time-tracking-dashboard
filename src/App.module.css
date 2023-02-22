@@ -1,6 +1,9 @@
 .main {
   padding-inline: 1rem;
   padding-block: 5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
 }
 
 .user__section {
@@ -37,10 +40,6 @@
   font-weight: var(--fw-300);
 }
 
-.nav {
-  /* border-top-left-radius: 8px;
-  border-top-right-radius: 8px; */
-}
 
 .nav__list {
   display: flex;
@@ -48,14 +47,17 @@
   padding-block: 1rem;
 }
 
-.nav__list li button {
+.nav__link {
   background-color: var(--neutral-color-2);
   color: var(--neutral-color-4);
   border: none;
   cursor: pointer;
   transition: color .2s;
+  font-size: var(--fs-card-titles);
 }
 
-.nav__list li button:hover {
+
+
+.nav__link:hover {
   color: #fff;
 }

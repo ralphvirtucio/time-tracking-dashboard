@@ -1,6 +1,7 @@
 import dashboardData from './data.json';
 import jeremyRobson from './images/image-jeremy.png';
 import classes from './App.module.css';
+import { Card } from './components/Card';
 
 function App() {
   return (
@@ -21,17 +22,18 @@ function App() {
           <nav className={classes.nav}>
             <ul className={classes.nav__list}>
               <li>
-                <button>Daily</button>
+                <button className={classes.nav__link}>Daily</button>
               </li>
               <li>
-                <button>Weekly</button>
+                <button className={classes.nav__link}>Weekly</button>
               </li>
               <li>
-                <button>Monthly</button>
+                <button className={classes.nav__link}>Monthly</button>
               </li>
             </ul>
           </nav>
         </section>
+        <Card />
       </main>
     </div>
   );
