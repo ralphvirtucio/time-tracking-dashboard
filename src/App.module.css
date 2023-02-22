@@ -3,6 +3,13 @@
   padding-block: 5rem;
 }
 
+.user__section {
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--neutral-color-2);
+
+}
+
 .user__profile {
   display: flex;
   align-items: center;
@@ -10,7 +17,7 @@
   background-color: var(--primary-color-1);
   padding-inline: 2rem;
   padding-block: 2rem;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 .user__photo {
@@ -31,13 +38,24 @@
 }
 
 .nav {
-  background-color: var(--neutral-color-2);
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  /* border-top-left-radius: 8px;
+  border-top-right-radius: 8px; */
 }
 
 .nav__list {
   display: flex;
   justify-content: space-evenly;
   padding-block: 1rem;
+}
+
+.nav__list li button {
+  background-color: var(--neutral-color-2);
+  color: var(--neutral-color-4);
+  border: none;
+  cursor: pointer;
+  transition: color .2s;
+}
+
+.nav__list li button:hover {
+  color: #fff;
 }
