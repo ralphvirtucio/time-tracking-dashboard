@@ -18,8 +18,8 @@ function App() {
               <h1 className={classes.user__name}>Jeremy Robson</h1>
             </div>
           </div>
-          <nav>
-            <ul>
+          <nav className={classes.nav}>
+            <ul className={classes.nav__list}>
               <li>
                 <button>Daily</button>
               </li>
