@@ -4,6 +4,12 @@ import classes from './App.module.css';
 import { Card } from './components/Card';
 
 function App() {
+  const card = dashboardData.map((data) => {
+    return (
+      <Card key={data.title} title={data.title} timeframe={data.timeframes} />
+    );
+  });
+
   return (
     <div className='App'>
       <main className={classes.main}>
@@ -33,7 +39,7 @@ function App() {
             </ul>
           </nav>
         </section>
-        <Card />
+        {card}
       </main>
     </div>
   );

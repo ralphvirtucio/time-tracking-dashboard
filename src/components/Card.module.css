@@ -1,7 +1,8 @@
 .card__container {
-  background-color: var(--primary-color-work);
   border-radius: 12px;
-  position: relative;
+  overflow: hidden;
+  /* background-color: var(--primary-color-work); */
+  /* position: relative; */
 }
 
 .card__photo-container {
@@ -15,9 +16,9 @@
   padding-inline: 2rem;
   padding-block: 2rem;
   border-radius: 12px;
-  position: absolute;
+  /* position: absolute;
   width: 100%;
-  top: 50px;
+  top: 50px; */
 }
 
 .card__row {
