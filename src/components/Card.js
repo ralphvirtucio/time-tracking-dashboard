@@ -34,11 +34,11 @@ export const Card = ({ title, timeframe }) => {
         <Icon iconName={title.toLowerCase()} />
       </div>
       <div className={classes.card__content}>
-        <div className={classes['card__row']}>
+        <div className={classes['card__row-1']}>
           <h2 className={classes.card__title}>{title}</h2>
           <Ellipsis />
         </div>
-        <div className={classes['card__row']}>
+        <div className={classes['card__row-2']}>
           <p className={classes['card__current-time']}>
             {timeframe.daily.current}hrs
           </p>

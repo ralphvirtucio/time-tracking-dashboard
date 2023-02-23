@@ -5,8 +5,6 @@
 }
 
 
-
-
 .card__content {
   background-color: var(--neutral-color-2);
   padding-inline: 2rem;
@@ -15,7 +13,13 @@
   position: relative;
 }
 
-.card__row {
+.card__row-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__row-2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,4 +88,22 @@
   overflow: hidden;
   padding-block-start: 3rem;
   position: relative;
+}
+
+
+@media only screen and (min-width: 1024px) {
+  .card__row-1 {
+    margin-block-end: 1rem;
+  }
+
+  .card__current-time {
+    font-size: 2.5rem;
+
+  }
+
+  .card__row-2 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
 }
