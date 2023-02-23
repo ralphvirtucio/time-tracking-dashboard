@@ -1,12 +1,10 @@
 .card__photo-container {
-  display: flex;
-  justify-content: flex-end;
-  padding-inline: 1rem;
+  position: absolute;
+  top: 0;
+  right: 20px;
 }
 
-.card__photo-container svg {
-  height: 3rem
-}
+
 
 
 .card__content {
@@ -14,6 +12,7 @@
   padding-inline: 2rem;
   padding-block: 2rem;
   border-radius: 12px;
+  position: relative;
 }
 
 .card__row {
@@ -43,34 +42,46 @@
   background-color: var(--primary-color-work);
   border-radius: 12px;
   overflow: hidden;
+  padding-block-start: 3rem;
+  position: relative;
 }
 
 .play__container {
   background-color: var(--primary-color-play);
   border-radius: 12px;
   overflow: hidden;
+  padding-block-start: 3rem;
+  position: relative;
 }
 
 .study__container {
   background-color: var(--primary-color-study);
   border-radius: 12px;
   overflow: hidden;
+  padding-block-start: 3rem;
+  position: relative;
 }
 
 .exercise__container {
   background-color: var(--primary-color-exercise);
   border-radius: 12px;
   overflow: hidden;
+  padding-block-start: 3rem;
+  position: relative;
 }
 
 .social__container {
   background-color: var(--primary-color-social);
   border-radius: 12px;
   overflow: hidden;
+  padding-block-start: 3rem;
+  position: relative;
 }
 
 .selfcare__container {
   background-color: var(--primary-color-self-care);
   border-radius: 12px;
   overflow: hidden;
+  padding-block-start: 3rem;
+  position: relative;
 }
