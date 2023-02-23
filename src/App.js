@@ -11,7 +11,7 @@ function App() {
   });
 
   return (
-    <div className='App'>
+    <div className={classes.app}>
       <main className={classes.main}>
         <section className={classes.user__section}>
           <div className={classes.user__profile}>
