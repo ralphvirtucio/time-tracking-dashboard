@@ -4,13 +4,17 @@
   right: 20px;
 }
 
-
 .card__content {
   background-color: var(--neutral-color-2);
   padding-inline: 2rem;
   padding-block: 2rem;
   border-radius: 12px;
   position: relative;
+}
+
+.card__content:hover {
+  cursor: pointer;
+  background-color: hsl(235, 46%, 30%);
 }
 
 .card__row-1 {
@@ -28,6 +32,7 @@
 .card__title {
   font-size: var(--fs-card-titles);
   color: #fff;
+  font-weight: var(--fw-500);
 }
 
 .card__current-time {
@@ -88,6 +93,10 @@
   overflow: hidden;
   padding-block-start: 3rem;
   position: relative;
+}
+
+.ellipsis:hover svg path {
+  fill: #fff;
 }
 
 
