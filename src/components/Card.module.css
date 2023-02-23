@@ -4,14 +4,16 @@
   padding-inline: 1rem;
 }
 
+.card__photo-container svg {
+  height: 3rem
+}
+
+
 .card__content {
   background-color: var(--neutral-color-2);
   padding-inline: 2rem;
   padding-block: 2rem;
   border-radius: 12px;
-  /* position: absolute; */
-  /* width: 100%; */
-  /* top: 50px; */
 }
 
 .card__row {
