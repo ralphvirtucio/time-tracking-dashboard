@@ -24,6 +24,9 @@
 body {
   font-family: $main-font-family;
   background-color: $main-bg;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .main {
@@ -32,11 +35,19 @@ body {
 	row-gap: 1.5rem;
 	padding-inline: 1.5rem;
 	padding-block: 5rem;
-}
+	max-width: 60rem;
+	min-height: 44.5rem;
+
+	@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
+		grid-template-columns: 1fr auto;
+		column-gap: 1.875rem;
+	}
+} 
 
 .side-bar {
 	background-color: $card-bg;
 	border-radius: $main-border-radius;
+
 
 	.profile-content {
 		background-color: $profile-bg;
@@ -46,6 +57,14 @@ body {
 		padding-block: 2.5rem;
 		align-items: center;
 		gap: 1.25rem;
+		flex-wrap: wrap;
+
+		@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 2.25rem;
+			padding-block-end: 5rem;
+		}
 
 		span {
 			color: $pale-blue;
@@ -58,6 +77,11 @@ body {
 			font-size: 1.5rem;
 			font-weight: $fw-300;
 			color: $white;
+
+			@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
+				font-size: 2.5rem;
+				line-height: 1.2;
+			}
 		}
 
 		img {
@@ -76,6 +100,14 @@ body {
 		justify-content: space-around;
 		padding-block: 1.5rem;
 
+
+		@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
+			flex-direction: column;
+			align-items: flex-start;
+			padding-inline-start: 2rem;
+			gap: 1.5rem;
+		}
+
 		li button {
 			border: none;
 			background-color: transparent;
@@ -93,6 +125,11 @@ body {
 
 .timesheet {
 	margin-block-start: 1.5rem;
+
+	@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
+		margin-block-start: 0;
+	}
+
 	
 
 	.list {
@@ -102,6 +139,11 @@ body {
 		display: grid;
 		grid-template-columns: 1fr;
 		row-gap: 4.5rem;
+
+		@media only screen and (min-width: map-get($breakpoints, 'tablet')) {
+			grid-template-columns: 1fr 1fr 1fr;
+			column-gap: 1.875rem;
+		}
 
 		&-item {
 			color: $white;
@@ -115,13 +157,18 @@ body {
 				background-color: $card-bg;
 				border-radius: $main-border-radius;
 				padding-block: 1.65rem;
+
+				@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
+					padding-inline: 1.875rem;
+					padding-block: 2rem;
+				}
+		
 			}
 
 			&__header {
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
-
 				.title {
 					font-size: $fs-card-title;
 					font-weight: $fw-500;
@@ -142,11 +189,23 @@ body {
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
+			
+				@media only screen and (min-width: map-get($breakpoints, 'tablet')) {
+					flex-direction: column;
+					align-items: flex-start;
+				}
+				@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
+					margin-block-start: 1.5rem;
+				}
 			}
 			
 			.current {
 				font-size: 2rem;
 				font-weight: $fw-300;
+
+				@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
+					font-size: 3.5rem;
+				}
 			}
 			
 			.previously {

@@ -25,3 +25,8 @@ $fs-card-title: 1.125rem;
 $fw-300: 300;
 $fw-400: 400;
 $fw-500: 500;
+
+$breakpoints: (
+  'tablet': 48em,
+  'laptop': 64em
+)

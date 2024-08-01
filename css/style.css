@@ -88,6 +88,9 @@ select {
 body {
   font-family: "Rubik", sans-serif;
   background-color: #0E1323;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main {
@@ -96,6 +99,14 @@ body {
   row-gap: 1.5rem;
   padding-inline: 1.5rem;
   padding-block: 5rem;
+  max-width: 60rem;
+  min-height: 44.5rem;
+}
+@media only screen and (min-width: 64em) {
+  .main {
+    grid-template-columns: 1fr auto;
+    column-gap: 1.875rem;
+  }
 }
 
 .side-bar {
@@ -110,6 +121,15 @@ body {
   padding-block: 2.5rem;
   align-items: center;
   gap: 1.25rem;
+  flex-wrap: wrap;
+}
+@media only screen and (min-width: 64em) {
+  .side-bar .profile-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.25rem;
+    padding-block-end: 5rem;
+  }
 }
 .side-bar .profile-content span {
   color: #bbc0ff;
@@ -121,6 +141,12 @@ body {
   font-size: 1.5rem;
   font-weight: 300;
   color: #fff;
+}
+@media only screen and (min-width: 64em) {
+  .side-bar .profile-content h3 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
 }
 .side-bar .profile-content img {
   width: 4rem;
@@ -135,6 +161,14 @@ body {
   display: flex;
   justify-content: space-around;
   padding-block: 1.5rem;
+}
+@media only screen and (min-width: 64em) {
+  .side-bar .time-categories {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-inline-start: 2rem;
+    gap: 1.5rem;
+  }
 }
 .side-bar .time-categories li button {
   border: none;
@@ -151,6 +185,11 @@ body {
 .timesheet {
   margin-block-start: 1.5rem;
 }
+@media only screen and (min-width: 64em) {
+  .timesheet {
+    margin-block-start: 0;
+  }
+}
 .timesheet .list {
   list-style: none;
   padding: 0;
@@ -158,6 +197,12 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 4.5rem;
+}
+@media only screen and (min-width: 48em) {
+  .timesheet .list {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1.875rem;
+  }
 }
 .timesheet .list-item {
   color: #fff;
@@ -171,6 +216,12 @@ body {
   background-color: #1C204B;
   border-radius: 15px;
   padding-block: 1.65rem;
+}
+@media only screen and (min-width: 64em) {
+  .timesheet .list-item .container {
+    padding-inline: 1.875rem;
+    padding-block: 2rem;
+  }
 }
 .timesheet .list-item__header {
   display: flex;
@@ -195,9 +246,25 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+@media only screen and (min-width: 48em) {
+  .timesheet .list-item__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media only screen and (min-width: 64em) {
+  .timesheet .list-item__content {
+    margin-block-start: 1.5rem;
+  }
+}
 .timesheet .list-item .current {
   font-size: 2rem;
   font-weight: 300;
+}
+@media only screen and (min-width: 64em) {
+  .timesheet .list-item .current {
+    font-size: 3.5rem;
+  }
 }
 .timesheet .list-item .previously {
   color: #bbc0ff;
