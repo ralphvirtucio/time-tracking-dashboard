@@ -1,95 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-  
-  <title>Frontend Mentor | Time tracking dashboard</title>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  <main>
-    <h1 class="sr-only">Time Tracking Dashboard</h1>
-    <aside>
-      <section>
-        <h2 class="sr-only">Profile of Jeremy Robson</h2>
-        <img src="./images/image-jeremy.png" alt="Jeremy Robson">
-        <div>
-          <span>Report for</span>
-          <h3>Jeremy Robson</h3>
-        </div>
+    <title>Frontend Mentor | Time tracking dashboard</title>
+    <link
+      rel="stylesheet"
+      href="css/style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="sr-only">Time Tracking Dashboard</h1>
+      <aside class="side-bar profile">
+        <section class="profile-content">
+          <h2 class="sr-only">Profile of Jeremy Robson</h2>
+          <img
+            src="./images/image-jeremy.png"
+            alt="Jeremy Robson" />
+          <div>
+            <span>Report for</span>
+            <h3>Jeremy Robson</h3>
+          </div>
+        </section>
+        <ul class="time-categories">
+          <li><button>Daily</button></li>
+          <li><button>Weekly</button></li>
+          <li><button>Monthly</button></li>
+        </ul>
+      </aside>
+
+      <section class="timesheet">
+        <h2 class="sr-only">Time DataFrames</h2>
+        <ul class="list">
+          <li class="list-item work">
+            <div class="container">
+              <div class="list-item__header">
+                <h3 class="title">Work</h3>
+                <button aria-label="Change">
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    width="21"
+                    height="5"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                      fill="#BBC0FF"
+                      fill-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+              <div class="list-item__content">
+                <h4 class="current">32hrs</h4>
+                <p class="previously">Last Week - 36hrs</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-item play">
+            <div class="container">
+              <div class="list-item__header">
+                <h3 class="title">Play</h3>
+                <button aria-label="Change">
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    width="21"
+                    height="5"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                      fill="#BBC0FF"
+                      fill-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+              <div class="list-item__content">
+                <h4 class="current">10hrs</h4>
+                <p class="previously">Last Week - 10hrs</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-item study">
+            <div class="container">
+              <div class="list-item__header">
+                <h3 class="title">Study</h3>
+                <button aria-label="Change">
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    width="21"
+                    height="5"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                      fill="#BBC0FF"
+                      fill-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+              <div class="list-item__content">
+                <h4 class="current">4hrs</h4>
+                <p class="previously">Last Week - 7hrs</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="list-item exercise">
+            <div class="container">
+              <div class="list-item__header">
+                <h3 class="title">Exercise</h3>
+                <button aria-label="Change">
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    width="21"
+                    height="5"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                      fill="#BBC0FF"
+                      fill-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+              <div class="list-item__content">
+                <h4 class="current">4hrs</h4>
+                <p class="previously">Last Week - 5hrs</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="list-item social">
+            <div class="container">
+              <div class="list-item__header">
+                <h3 class="title">Social</h3>
+                <button aria-label="Change">
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    width="21"
+                    height="5"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                      fill="#BBC0FF"
+                      fill-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+              <div class="list-item__content">
+                <h4 class="current">5hrs</h4>
+                <p class="previously">Last week - 10hrs</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="list-item selfcare">
+            <div class="container">
+              <div class="list-item__header">
+                <h3 class="title">Self Care</h3>
+                <button aria-label="Change">
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    width="21"
+                    height="5"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                      fill="#BBC0FF"
+                      fill-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+              <div class="list-item__content">
+                <h4 class="current">2hrs</h4>
+                <p class="previously">Last Week - 2hrs</p>
+              </div>
+            </div>
+          </li>
+        </ul>
       </section>
-      <ul>
-        <li><button>Daily</button></li>
-        <li><button>Weekly</button></li>
-        <li><button>Monthly</button></li>
-      </ul>
-    </aside>
-
-    <section>
-      <h2 class="sr-only">Time DataFrames</h2>
-      <ul>
-        <li>
-          <div>
-            <h3>Work</h3>
-            <button>...</button>
-          </div>
-          <h4>32hrs</h4>
-          <p>Last Week - 36hrs</p>
-        </li>
-        <li>
-          <div>
-            <h3>Play</h3>
-            <button>...</button>
-          </div>
-          <h4>10hrs</h4>
-          <p>Last Week - 10hrs</p>
-        </li>
-        <li>
-          <div>
-            <h3>Study</h3>
-            <button>...</button>
-          </div>
-          <h4>4hrs</h4>
-          <p>Last Week - 7hrs</p>
-        </li>
-        <li>
-          <div>
-            <h3>Exercise</h3>
-            <button>...</button>
-          </div>
-          <h4>4hrs</h4>
-          <p>Last Week - 5hrs</p>
-        </li>
-        <li>
-          <div>
-            <h3>Social</h3>
-            <button>...</button>
-          </div>
-          <h4>5hrs</h4>
-          <p>Last week - 10hrs</p>
-        </li>
-        <li>
-          <div>
-            <h3>Self Care</h3>
-            <button></button>
-          </div>
-          <h4>2hrs</h4>
-          <p>Last Week - 2hrs</p>
-        </li>
-      </ul>
-    </section>
-  </main>
-</body>
+    </main>
+  </body>
 </html>

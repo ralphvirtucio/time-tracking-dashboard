@@ -1,0 +1,187 @@
+
+@use './base';
+@use './abstract' as *;
+
+
+// ACCESSIBILITY STYLES ***********************************
+
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important; 
+	-webkit-clip-path: inset(50%) !important;
+		clip-path: inset(50%) !important; 
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important; 
+}
+
+// END OF ACCESSIBILITY STYLES ***********************************
+
+body {
+  font-family: $main-font-family;
+  background-color: $main-bg;
+}
+
+.main {
+	display: grid;
+	grid-template-columns: 1fr;
+	row-gap: 1.5rem;
+	padding-inline: 1.5rem;
+	padding-block: 5rem;
+}
+
+.side-bar {
+	background-color: $card-bg;
+	border-radius: $main-border-radius;
+
+	.profile-content {
+		background-color: $profile-bg;
+		border-radius: 15px;
+		display: flex;
+		padding-inline: 2rem;
+		padding-block: 2.5rem;
+		align-items: center;
+		gap: 1.25rem;
+
+		span {
+			color: $pale-blue;
+			font-size: 0.9375rem;
+			font-weight: $fw-300;
+			line-height: 1;
+		}
+
+		h3 {
+			font-size: 1.5rem;
+			font-weight: $fw-300;
+			color: $white;
+		}
+
+		img {
+			width: 4rem;
+			height: 4rem;
+			border-radius: 50%;
+			border: 3px solid $white;
+		}
+	}
+
+	.time-categories {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		justify-content: space-around;
+		padding-block: 1.5rem;
+
+		li button {
+			border: none;
+			background-color: transparent;
+			color: $clr-time-category;
+			font-size: 1.125rem;
+			cursor: pointer;
+			transition: color .25s ease-in-out;
+
+			&:hover {
+				color: $white;
+			}
+		}
+	}
+}
+
+.timesheet {
+	margin-block-start: 1.5rem;
+	
+
+	.list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: grid;
+		grid-template-columns: 1fr;
+		row-gap: 4.5rem;
+
+		&-item {
+			color: $white;
+			border-radius: $main-border-radius;
+				background-repeat: no-repeat;
+				background-position: right 5% top -5%;
+			
+			.container {
+				transform: translateY(40px);
+				padding-inline: 1.5rem;
+				background-color: $card-bg;
+				border-radius: $main-border-radius;
+				padding-block: 1.65rem;
+			}
+
+			&__header {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
+				.title {
+					font-size: $fs-card-title;
+					font-weight: $fw-500;
+				}
+
+				button {
+					background-color: transparent;
+					border: none;
+					cursor: pointer;
+					transition: color .25s ease-in-out;
+					&:hover {
+						color: $white;
+					}
+				}
+			}
+
+			&__content {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+			
+			.current {
+				font-size: 2rem;
+				font-weight: $fw-300;
+			}
+			
+			.previously {
+				color: $pale-blue;
+				font-size: 0.9375rem;
+			}
+
+			&.work {
+				background-color: $clr-work;
+				background-image: url("/images/icon-work.svg");
+			}
+
+			&.play {
+				background-color: $clr-play;
+				background-image: url("/images/icon-play.svg");
+			}
+			&.study {
+				background-color: $clr-study;
+				background-image: url("/images/icon-study.svg");
+			}
+			
+			&.exercise {
+				background-color: $clr-exercise;
+				background-image: url("/images/icon-exercise.svg");
+			}
+			&.social {
+				background-color: $clr-social;
+				background-image: url("/images/icon-social.svg");
+			}
+
+			&.selfcare {
+				background-color: $clr-selfcare;
+				background-image: url("/images/icon-self-care.svg");
+			}
+
+		}
+	}
+}
