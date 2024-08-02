@@ -99,7 +99,7 @@ body {
   row-gap: 1.5rem;
   padding-inline: 1.5rem;
   padding-block: 5rem;
-  max-width: 60rem;
+  max-width: 65rem;
   min-height: 44.5rem;
 }
 @media only screen and (min-width: 64em) {
@@ -154,6 +154,35 @@ body {
   border-radius: 50%;
   border: 3px solid #fff;
 }
+.side-bar .time-frames {
+  border: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-block: 1.5rem;
+}
+@media only screen and (min-width: 64em) {
+  .side-bar .time-frames {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-inline-start: 2rem;
+    gap: 1.5rem;
+  }
+}
+.side-bar .time-frames .time-frame input {
+  display: none;
+}
+.side-bar .time-frames .time-frame input:checked + label {
+  color: #fff;
+}
+.side-bar .time-frames .time-frame label {
+  cursor: pointer;
+  color: #7078C9;
+  transition: color 0.25s ease-in-out;
+}
+.side-bar .time-frames .time-frame label:hover {
+  color: #fff;
+}
 .side-bar .time-categories {
   list-style: none;
   padding: 0;
@@ -177,6 +206,9 @@ body {
   font-size: 1.125rem;
   cursor: pointer;
   transition: color 0.25s ease-in-out;
+}
+.side-bar .time-categories li button.btn-timeframe.active {
+  color: #fff;
 }
 .side-bar .time-categories li button:hover {
   color: #fff;
@@ -216,12 +248,19 @@ body {
   background-color: #1C204B;
   border-radius: 15px;
   padding-block: 1.65rem;
+  cursor: pointer;
 }
 @media only screen and (min-width: 64em) {
   .timesheet .list-item .container {
     padding-inline: 1.875rem;
     padding-block: 2rem;
   }
+}
+.timesheet .list-item .container:hover {
+  background-color: #33397A;
+}
+.timesheet .list-item .container .btn__ellipsis:hover svg path {
+  fill: #fff;
 }
 .timesheet .list-item__header {
   display: flex;

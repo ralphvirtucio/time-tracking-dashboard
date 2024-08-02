@@ -28,12 +28,13 @@
     <link
       rel="stylesheet"
       href="css/style.css" />
+      <script src="index.js" defer></script>
   </head>
   <body>
     <main class="main">
       <h1 class="sr-only">Time Tracking Dashboard</h1>
-      <aside class="side-bar profile">
-        <section class="profile-content">
+      <section class="side-bar profile">
+        <div class="profile-content">
           <h2 class="sr-only">Profile of Jeremy Robson</h2>
           <img
             src="./images/image-jeremy.png"
@@ -42,22 +43,40 @@
             <span>Report for</span>
             <h3>Jeremy Robson</h3>
           </div>
-        </section>
-        <ul class="time-categories">
-          <li><button>Daily</button></li>
-          <li><button>Weekly</button></li>
-          <li><button>Monthly</button></li>
-        </ul>
-      </aside>
+        </div>
+        <form>
+          <fieldset class="time-frames">
+            <legend class="sr-only">Select Time Stats:</legend>
+            <div class="time-frame">
+              <input type="radio" id="daily" name="timestat" value="daily">
+              <label for="daily">Daily</label>
+            </div>
+            <div class="time-frame">
+              <input type="radio" id="weekly" name="timestat" value="weekly" checked>
+              <label for="weekly">Weekly</label>
+            </div>
+  
+            <div class="time-frame">
+              <input type="radio" id="monthly" name="timestat" value="monthly">
+              <label for="monthly">Monthly</label>
+            </div>
+          </fieldset>
+        </form>
+        <!-- <ul class="time-categories">
+          <li><button class="btn-timeframe">Daily</button></li>
+          <li><button class="btn-timeframe active">Weekly</button></li>
+          <li><button class="btn-timeframe">Monthly</button></li>
+        </ul> -->
+      </section>
 
       <section class="timesheet">
         <h2 class="sr-only">Time DataFrames</h2>
         <ul class="list">
-          <li class="list-item work">
+           <li class="list-item work">
             <div class="container">
               <div class="list-item__header">
                 <h3 class="title">Work</h3>
-                <button aria-label="Change">
+                <button aria-label="Change" class="btn__ellipsis">
                   <svg
                     aria-hidden="true"
                     focusable="false"
@@ -81,7 +100,7 @@
             <div class="container">
               <div class="list-item__header">
                 <h3 class="title">Play</h3>
-                <button aria-label="Change">
+                <button aria-label="Change" class="btn__ellipsis">
                   <svg
                     aria-hidden="true"
                     focusable="false"
@@ -105,7 +124,7 @@
             <div class="container">
               <div class="list-item__header">
                 <h3 class="title">Study</h3>
-                <button aria-label="Change">
+                <button aria-label="Change" class="btn__ellipsis">
                   <svg
                     aria-hidden="true"
                     focusable="false"
@@ -130,7 +149,7 @@
             <div class="container">
               <div class="list-item__header">
                 <h3 class="title">Exercise</h3>
-                <button aria-label="Change">
+                <button aria-label="Change" class="btn__ellipsis">
                   <svg
                     aria-hidden="true"
                     focusable="false"
@@ -155,7 +174,7 @@
             <div class="container">
               <div class="list-item__header">
                 <h3 class="title">Social</h3>
-                <button aria-label="Change">
+                <button aria-label="Change" class="btn__ellipsis">
                   <svg
                     aria-hidden="true"
                     focusable="false"
@@ -180,7 +199,7 @@
             <div class="container">
               <div class="list-item__header">
                 <h3 class="title">Self Care</h3>
-                <button aria-label="Change">
+                <button aria-label="Change" class="btn__ellipsis">
                   <svg
                     aria-hidden="true"
                     focusable="false"

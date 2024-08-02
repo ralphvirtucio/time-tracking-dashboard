@@ -35,7 +35,7 @@ body {
 	row-gap: 1.5rem;
 	padding-inline: 1.5rem;
 	padding-block: 5rem;
-	max-width: 60rem;
+	max-width: 65rem;
 	min-height: 44.5rem;
 
 	@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
@@ -92,6 +92,43 @@ body {
 		}
 	}
 
+	.time-frames {
+		border: none;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		padding-block: 1.5rem;
+
+				@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
+			flex-direction: column;
+			align-items: flex-start;
+			padding-inline-start: 2rem;
+			gap: 1.5rem;
+		}
+
+		.time-frame {
+			
+
+			input {
+				display: none;
+				&:checked + label {
+					color: $white;
+				}
+			}
+
+			label {
+				cursor: pointer;
+				color: $clr-time-frame;
+				transition: color .25s ease-in-out;
+
+				&:hover {
+					color: $white;
+				}
+			}
+		
+		}
+	}
+
 	.time-categories {
 		list-style: none;
 		padding: 0;
@@ -100,7 +137,6 @@ body {
 		justify-content: space-around;
 		padding-block: 1.5rem;
 
-
 		@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
 			flex-direction: column;
 			align-items: flex-start;
@@ -108,13 +144,18 @@ body {
 			gap: 1.5rem;
 		}
 
+
 		li button {
 			border: none;
 			background-color: transparent;
-			color: $clr-time-category;
+			color: $clr-time-frame;
 			font-size: 1.125rem;
 			cursor: pointer;
 			transition: color .25s ease-in-out;
+
+			&.btn-timeframe.active {
+				color: $white;
+			}
 
 			&:hover {
 				color: $white;
@@ -157,12 +198,25 @@ body {
 				background-color: $card-bg;
 				border-radius: $main-border-radius;
 				padding-block: 1.65rem;
+				cursor: pointer;
+
 
 				@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
 					padding-inline: 1.875rem;
 					padding-block: 2rem;
 				}
+
+				&:hover {
+					background-color: #33397A;
+				}
 		
+				.btn__ellipsis {
+					&:hover {
+						svg path {
+							fill:$white;
+						}
+					}
+				}
 			}
 
 			&__header {
