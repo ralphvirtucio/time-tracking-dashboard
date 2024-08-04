@@ -21,280 +21,232 @@
 
 // END OF ACCESSIBILITY STYLES ***********************************
 
+// START OF ELEMENT SELECTOR STYLES ***********************************
 body {
-  font-family: $main-font-family;
-  background-color: $main-bg;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	background-color: $main-bg;
+	font-family: $main-font-family;
+	display: grid;
+	place-items: center;
 }
 
-.main {
+main {
+	margin-block: 5rem;
 	display: grid;
-	grid-template-columns: 1fr;
 	row-gap: 1.5rem;
-	padding-inline: 1.5rem;
-	padding-block: 5rem;
-	max-width: 65rem;
-	min-height: 44.5rem;
+}
 
-	@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
-		grid-template-columns: 1fr auto;
-		column-gap: 1.875rem;
-	}
-} 
-
-.side-bar {
+.user-info {
 	background-color: $card-bg;
 	border-radius: $main-border-radius;
+}
+// END OF ELEMENT SELECTOR STYLES ***********************************
 
 
-	.profile-content {
-		background-color: $profile-bg;
-		border-radius: 15px;
-		display: flex;
-		padding-inline: 2rem;
-		padding-block: 2.5rem;
-		align-items: center;
-		gap: 1.25rem;
-		flex-wrap: wrap;
+// START PROFILE STYLES ****************************************
+.profile {
+	background: $profile-bg;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	width: 100%;
+	padding-inline: 2rem;
+	padding-block: 2.1875rem;
+	border-radius: $main-border-radius;
+	
+	img {
+		width: 64px;
+		height: 64px;
+		border: 3px solid #fff;
+		border-radius: 50%;
+	}
 
-		@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
-			flex-direction: column;
-			align-items: flex-start;
-			gap: 2.25rem;
-			padding-block-end: 5rem;
-		}
-
+	&__content {
 		span {
 			color: $pale-blue;
 			font-size: 0.9375rem;
-			font-weight: $fw-300;
-			line-height: 1;
 		}
 
-		h3 {
+		h2 {
 			font-size: 1.5rem;
-			font-weight: $fw-300;
 			color: $white;
-
-			@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
-				font-size: 2.5rem;
-				line-height: 1.2;
-			}
-		}
-
-		img {
-			width: 4rem;
-			height: 4rem;
-			border-radius: 50%;
-			border: 3px solid $white;
-		}
-	}
-
-	.time-frames {
-		border: none;
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		padding-block: 1.5rem;
-
-				@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
-			flex-direction: column;
-			align-items: flex-start;
-			padding-inline-start: 2rem;
-			gap: 1.5rem;
-		}
-
-		.time-frame {
-			
-
-			input {
-				display: none;
-				&:checked + label {
-					color: $white;
-				}
-			}
-
-			label {
-				cursor: pointer;
-				color: $clr-time-frame;
-				transition: color .25s ease-in-out;
-
-				&:hover {
-					color: $white;
-				}
-			}
-		
-		}
-	}
-
-	.time-categories {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		display: flex;
-		justify-content: space-around;
-		padding-block: 1.5rem;
-
-		@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
-			flex-direction: column;
-			align-items: flex-start;
-			padding-inline-start: 2rem;
-			gap: 1.5rem;
-		}
-
-
-		li button {
-			border: none;
-			background-color: transparent;
-			color: $clr-time-frame;
-			font-size: 1.125rem;
-			cursor: pointer;
-			transition: color .25s ease-in-out;
-
-			&.btn-timeframe.active {
-				color: $white;
-			}
-
-			&:hover {
-				color: $white;
-			}
+			font-weight: $fw-300;
 		}
 	}
 }
+// END PROFILE STYLES ****************************************
 
-.timesheet {
-	margin-block-start: 1.5rem;
+// START TABLIST STYLES ****************************************
 
-	@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
-		margin-block-start: 0;
+ul[role="tablist"] {
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+	padding-block: 1.5rem;
+
+	li a[role="tab"] {
+
+		&:link, &:active, 
+		&:visited {
+			color: $clr-time-frame;
+			text-decoration: none;
+			font-size: 1.125rem;
+		}
+
+		&:hover {
+			color: $white;
+		}
+		
+	}
+}
+
+// END TABLIST STYLES ****************************************
+
+
+// START TAB PANEL STYLES ****************************************
+	section[role="tabpanel"] {
+		
 	}
 
-	
+// END TAB PANEL STYLES ****************************************
 
-	.list {
-		list-style: none;
-		padding: 0;
-		margin: 0;
+// START CARDS STYLES ****************************************
+.cards {
 		display: grid;
 		grid-template-columns: 1fr;
-		row-gap: 4.5rem;
+		row-gap: 1.5rem;
+		list-style:none;
+		padding: 0;
+		margin: 0;
+}
 
-		@media only screen and (min-width: map-get($breakpoints, 'tablet')) {
-			grid-template-columns: 1fr 1fr 1fr;
-			column-gap: 1.875rem;
+.card {
+	position: relative;
+	padding-block-start: 2.5rem;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 50%;
+		display: block;
+		z-index: 1;
+		position: absolute;
+		border-radius: $main-border-radius;
+	}
+
+	.img {
+		position: absolute;
+		right: 1rem;
+		z-index: 2;
+	}
+
+
+	&.work {
+		&::before {
+			background-color: $clr-work;
 		}
 
-		&-item {
-			color: $white;
-			border-radius: $main-border-radius;
-				background-repeat: no-repeat;
-				background-position: right 5% top -5%;
-			
-			.container {
-				transform: translateY(40px);
-				padding-inline: 1.5rem;
-				background-color: $card-bg;
-				border-radius: $main-border-radius;
-				padding-block: 1.65rem;
-				cursor: pointer;
+		.img {
+			bottom: 7.3rem;
+		}
+	}
+	&.play {
+		&::before {
+			background-color: $clr-play;
+		}
 
+		.img {
+			bottom: 7.3rem;
+		}
+	}
+	&.study {
+		&::before {
+			background-color: $clr-study;
+		}
 
-				@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
-					padding-inline: 1.875rem;
-					padding-block: 2rem;
-				}
+		.img {
+			bottom: 7rem;
+		}
+	}
+	&.exercise {
+		&::before {
+			background-color: $clr-exercise;
+		}
 
-				&:hover {
-					background-color: #33397A;
-				}
+		.img {
+			bottom: 8.3rem;
+		}
+	}
+	&.social {
+		&::before {
+			background-color: $clr-social;
+		}
+
+		.img {
+			bottom: 6.2rem;
+		}
+	}
+	&.selfcare {
+		&::before {
+			background-color: $clr-selfcare;
+		}
+
+		.img {
+			bottom: 8rem;
+		}
+	
+	}
+	
+	
+	
+
+	
+	.text {
+		background-color: $card-bg;
+		position: relative;
+		z-index: 3;
+		border-radius: $main-border-radius;
+		padding-inline: 1.5rem;
+		padding-block: 1.75rem;
+		color: $white;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		row-gap: 6px;
+
+		.card__heading {
+			a {
+				text-decoration: none;
+				font-size: 1.125rem;
+				font-weight: $fw-500;
+				color: inherit;
+			}
+		}
 		
-				.btn__ellipsis {
-					&:hover {
-						svg path {
-							fill:$white;
-						}
-					}
-				}
-			}
+		.more-info__btn {
+			border: none;
+			background-color: transparent;
+			justify-self: end;
+		}
 
-			&__header {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				.title {
-					font-size: $fs-card-title;
-					font-weight: $fw-500;
-				}
+		.current {
+			font-size: 2rem;
+			font-weight: $fw-300;
+		}
 
-				button {
-					background-color: transparent;
-					border: none;
-					cursor: pointer;
-					transition: color .25s ease-in-out;
-					&:hover {
-						color: $white;
-					}
-				}
-			}
-
-			&__content {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-			
-				@media only screen and (min-width: map-get($breakpoints, 'tablet')) {
-					flex-direction: column;
-					align-items: flex-start;
-				}
-				@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
-					margin-block-start: 1.5rem;
-				}
-			}
-			
-			.current {
-				font-size: 2rem;
-				font-weight: $fw-300;
-
-				@media only screen and (min-width: map-get($breakpoints, 'laptop')) {
-					font-size: 3.5rem;
-				}
-			}
-			
-			.previously {
-				color: $pale-blue;
-				font-size: 0.9375rem;
-			}
-
-			&.work {
-				background-color: $clr-work;
-				background-image: url("/images/icon-work.svg");
-			}
-
-			&.play {
-				background-color: $clr-play;
-				background-image: url("/images/icon-play.svg");
-			}
-			&.study {
-				background-color: $clr-study;
-				background-image: url("/images/icon-study.svg");
-			}
-			
-			&.exercise {
-				background-color: $clr-exercise;
-				background-image: url("/images/icon-exercise.svg");
-			}
-			&.social {
-				background-color: $clr-social;
-				background-image: url("/images/icon-social.svg");
-			}
-
-			&.selfcare {
-				background-color: $clr-selfcare;
-				background-image: url("/images/icon-self-care.svg");
-			}
-
+		.previous {
+			color: $pale-blue;
+			font-size: 0.9375rem;
 		}
 	}
 }
+
+
+
+// END CARDS STYLES ****************************************
+
