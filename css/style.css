@@ -250,7 +250,7 @@ ul[role=tablist] li a[role=tab][aria-selected=true] {
   font-size: 2rem;
   font-weight: 300;
 }
-.card__body .previous {
+.card__body .previous__time-info {
   color: #bbc0ff;
   font-size: 0.9375rem;
 }

@@ -110,9 +110,7 @@ ul[role="tablist"] {
 
 
 // START TAB PANEL STYLES ****************************************
-	section[role="tabpanel"] {
-		
-	}
+	
 
 // END TAB PANEL STYLES ****************************************
 
@@ -249,7 +247,7 @@ ul[role="tablist"] {
 			font-weight: $fw-300;
 		}
 
-		.previous {
+		.previous__time-info {
 			color: $pale-blue;
 			font-size: 0.9375rem;
 		}
