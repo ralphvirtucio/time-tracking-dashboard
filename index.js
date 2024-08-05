@@ -24,12 +24,12 @@ const cardHTML = (data, selectedTimeFrame) => {
               </div>
               <div class="card__body daily">
                 <h3 class="current">
-                  ${selectedTimeFrame.current}hrs
+                  ${timeframes[selectedTimeFrame].current}hrs
                 </h3>
                 <p class="previous">
                   <span>Last Week</span>
                   -
-                  <span>${selectedTimeFrame.previous}</span>
+                  <span>${timeframes[selectedTimeFrame].previous}</span>
                 </p>
               </div>
             </div>
@@ -58,19 +58,16 @@ async function fetchData() {
 async function init() {
   const data = await fetchData()
 
-  // data.forEach(res => {
-  //   const card = document.createElement("li")
-  //   const title = res.title.replace(' ', '').toLowerCase()
-  //   card.classList.add('card')
-  //   card.classList.add(title)
+  data.forEach(res => {
+    const card = document.createElement("li")
+    const title = res.title.replace(' ', '').toLowerCase()
+    card.classList.add('card')
+    card.classList.add(title)
     
     
-  //   card.innerHTML = cardHTML(res)
-  //   cards.appendChild(card)
-    
-
-
-  // })
+    card.innerHTML = cardHTML(res, 'daily')
+    cards.appendChild(card)
+  })
 
 
   tabs.forEach((tab) => {
@@ -80,7 +77,8 @@ async function init() {
       const selectedTab = e.currentTarget
       const currentTab = tabList.querySelector('[aria-selected]')
 
-      selectedTab.focus()
+      if(selectedTab !== currentTab) {
+        selectedTab.focus()
 
       selectedTab.removeAttribute('tabindex')
 
@@ -88,18 +86,19 @@ async function init() {
       currentTab.removeAttribute('aria-selected')
       currentTab.setAttribute('tabindex', '-1')
 
-      // data.forEach(res => {
-      //     const card = document.createElement("li")
-      //     const title = res.title.replace(' ', '').toLowerCase()
-      //     card.classList.add('card')
-      //     card.classList.add(title)
-      //     const selectedTimeFrame = res.timeframes[selectedTab.getAttribute('id')]
-      //     card.innerHTML = cardHTML(res, selectedTimeFrame)
+      data.forEach(res => {
+          const card = document.createElement("li")
+          const title = res.title.replace(' ', '').toLowerCase()
+          card.classList.add('card')
+          card.classList.add(title)
+          const selectedTimeFrame = selectedTab.getAttribute('id')
+          card.innerHTML = cardHTML(res, selectedTimeFrame)
 
-      //     cards.appendChild(card)
+          cards.appendChild(card)
 
-      // })
+      })
 
+      }
     })
   })
 }
