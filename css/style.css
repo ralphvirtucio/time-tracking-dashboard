@@ -146,6 +146,9 @@ ul[role=tablist] li a[role=tab]:link, ul[role=tablist] li a[role=tab]:active, ul
 ul[role=tablist] li a[role=tab]:hover {
   color: #fff;
 }
+ul[role=tablist] li a[role=tab][aria-selected=true] {
+  color: #fff;
+}
 
 .cards {
   display: grid;
@@ -213,7 +216,7 @@ ul[role=tablist] li a[role=tab]:hover {
 .card.selfcare .img {
   bottom: 8rem;
 }
-.card .text {
+.card__content {
   background-color: #1C204B;
   position: relative;
   z-index: 3;
@@ -221,27 +224,33 @@ ul[role=tablist] li a[role=tab]:hover {
   padding-inline: 1.5rem;
   padding-block: 1.75rem;
   color: #fff;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  row-gap: 6px;
 }
-.card .text .card__heading a {
+.card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card__header .card__heading a {
   text-decoration: none;
   font-size: 1.125rem;
   font-weight: 500;
   color: inherit;
 }
-.card .text .more-info__btn {
+.card__header .more-info__btn {
   border: none;
   background-color: transparent;
   justify-self: end;
 }
-.card .text .current {
+.card__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__body .current {
   font-size: 2rem;
   font-weight: 300;
 }
-.card .text .previous {
+.card__body .previous {
   color: #bbc0ff;
   font-size: 0.9375rem;
 }

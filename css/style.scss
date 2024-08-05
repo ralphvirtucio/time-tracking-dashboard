@@ -98,6 +98,10 @@ ul[role="tablist"] {
 		&:hover {
 			color: $white;
 		}
+
+		&[aria-selected="true"] {
+			color: $white;
+		}
 		
 	}
 }
@@ -202,11 +206,7 @@ ul[role="tablist"] {
 	
 	}
 	
-	
-	
-
-	
-	.text {
+	&__content {
 		background-color: $card-bg;
 		position: relative;
 		z-index: 3;
@@ -214,12 +214,14 @@ ul[role="tablist"] {
 		padding-inline: 1.5rem;
 		padding-block: 1.75rem;
 		color: $white;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		align-items: center;
-		row-gap: 6px;
+	}
 
-		.card__heading {
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+			.card__heading {
 			a {
 				text-decoration: none;
 				font-size: 1.125rem;
@@ -233,8 +235,16 @@ ul[role="tablist"] {
 			background-color: transparent;
 			justify-self: end;
 		}
+	}
 
-		.current {
+	
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		
+	.current {
 			font-size: 2rem;
 			font-weight: $fw-300;
 		}
@@ -244,7 +254,9 @@ ul[role="tablist"] {
 			font-size: 0.9375rem;
 		}
 	}
-}
+	}
+
+	
 
 
 

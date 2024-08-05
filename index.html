@@ -43,10 +43,10 @@
 
           <ul role="tablist">
             <li role="presentation">
-              <a role="tab" href="#daily" id="daily" tabindex="-1">Daily</a>
+              <a role="tab" href="#daily" id="daily" aria-selected="true">Daily</a>
             </li>
             <li role="presentation">
-              <a role="tab" href="#weekly" id="weekly" aria-selected="true">Weekly</a>
+              <a role="tab" href="#weekly" id="weekly" tabindex="-1">Weekly</a>
             </li>
             <li role="presentation">
               <a role="tab" href="#monthly" id="monthly" tabindex="-1">Monthly</a>
@@ -60,17 +60,21 @@
         <section role="tabpanel" id="tabpanel" aria-labelledby="Daily Panel">
           <!-- CARDSs -->
           <ul class="cards">
-            <li class="card work">
-              <div class="img">
-                <img src="./images/icon-work.svg" alt="">
-              </div>
-              <div class="text">
+            <!-- DYNAMIC CARDS -->
+           <li class="card work">
+            <div class="img">
+              <img src="./images/icon-work.svg" alt="">
+            </div>
+            <div class="card__content">
+              <div class="card__header">
                 <h2 class="card__heading">
                   <a href="#work">Work</a>
                 </h2>
                 <button aria-label="More info" class="more-info__btn">
                   <svg aria-hidden="true" focusable="false" width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
                 </button>
+              </div>
+              <div class="card__body daily">
                 <h3 class="current">
                   32hrs
                 </h3>
@@ -80,8 +84,30 @@
                   <span>36hrs</span>
                 </p>
               </div>
+            </div>
+              <!-- <div class="img">
+                <img src="./images/icon-work.svg" alt="">
+              </div>
+              <div class="text">
+                <h2 class="card__heading">
+                  <a href="#work">Work</a>
+                </h2>
+                <button aria-label="More info" class="more-info__btn">
+                  <svg aria-hidden="true" focusable="false" width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+                </button>
+                <div aria-label="">
+                  <h3 class="current">
+                    32hrs
+                  </h3>
+                  <p class="previous">
+                    <span>Last Week</span>
+                    -
+                    <span>36hrs</span>
+                  </p>
+                </div>
+              </div> -->
             </li>
-            <li class="card play">
+            <!-- <li class="card play">
               <div class="img">
                 <img src="./images/icon-play.svg" alt="">
               </div>
@@ -185,7 +211,7 @@
                   <span>36hrs</span>
                 </p>
               </div>
-            </li>
+            </li> -->
           </ul>
 
         </section>
