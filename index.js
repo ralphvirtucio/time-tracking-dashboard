@@ -1,6 +1,7 @@
 const tabList = document.querySelector('[role=tablist]');
 const cardList = document.querySelector('.cards');
 const tabs = document.querySelectorAll('[role=tab]');
+const tabPanel = document.querySelector('#tabpanel')
 
 async function init() {
   const data = await fetchData();
@@ -10,6 +11,13 @@ async function init() {
   tabs.forEach((tab) => {
     tab.addEventListener('click',(e) =>  switchTabs(e, data));
   });
+
+  const cardContents = document.querySelectorAll('.card__content');
+  const moreInfoButtons = document.querySelectorAll('.more-info__btn');
+
+
+  hoverableCardMoreBtn(cardContents, moreInfoButtons)
+  
 }
 
 async function fetchData() {
@@ -87,6 +95,10 @@ const switchTabs = (e, data) => {
     currentTab.removeAttribute('aria-selected');
     currentTab.setAttribute('tabindex', '-1');
 
+    tabPanel.setAttribute('aria-labelledby', selectedTab.textContent + ' Panel')
+
+    document.title = selectedTab.textContent + ' | ' + ' TimeTDashboard'
+
     data.forEach((res, i) => {
       const current = document.querySelectorAll('.current')
       const previous = document.querySelectorAll('.previous')
@@ -113,6 +125,32 @@ const switchTabs = (e, data) => {
     })
   }
 };
+
+
+const hoverableCardMoreBtn = (cards, buttons) => {
+  cards.forEach((node, i) => {
+    node.addEventListener('mouseenter', () => {
+      node.classList.add('hovered')
+
+    })
+
+    node.addEventListener('mouseleave', () => {
+      node.classList.remove('hovered')
+    })
+
+    buttons[i].addEventListener('mouseenter', () => {
+      node.classList.remove('hovered')
+      buttons[i].classList.add('hovered')
+
+    })
+
+    buttons[i].addEventListener('mouseleave', () => {
+      node.classList.add('hovered')
+      buttons[i].classList.remove('hovered')
+    })
+  })
+}
+
 
 
 window.addEventListener('DOMContentLoaded', init);

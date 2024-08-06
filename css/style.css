@@ -300,6 +300,12 @@ ul[role=tablist] li a[role=tab][aria-selected=true] {
   padding-block: 1.75rem;
   color: #fff;
 }
+.card__content:focus-within {
+  background-color: #33397A;
+}
+.card__content.hovered {
+  background-color: #33397A;
+}
 @media (min-width: 62em) {
   .card__content {
     padding-inline: 1.875rem;
@@ -317,15 +323,29 @@ ul[role=tablist] li a[role=tab][aria-selected=true] {
   font-weight: 500;
   color: inherit;
 }
+.card__header .card__heading a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 .card__header .more-info__btn {
   border: none;
   background-color: transparent;
-  justify-self: end;
+  cursor: pointer;
+  z-index: 4;
+  position: relative;
+}
+.card__header .more-info__btn.hovered svg path {
+  fill: #fff;
 }
 .card__body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 @media (min-width: 48em) {
   .card__body {

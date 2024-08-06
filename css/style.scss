@@ -172,6 +172,8 @@ ul[role="tablist"] {
 	padding-block-start: 2.5rem;
 	overflow: hidden;
 
+
+
 	
 
 
@@ -283,6 +285,15 @@ ul[role="tablist"] {
 		padding-block: 1.75rem;
 		color: $white;
 
+		&:focus-within  {
+			background-color: #33397A;
+		}
+
+		&.hovered {
+			background-color: #33397A;
+		}
+
+
 		@include breakpoint(desktop) {
 			padding-inline: 1.875rem;
 			padding-block: 2rem;
@@ -301,13 +312,29 @@ ul[role="tablist"] {
 				font-size: 1.125rem;
 				font-weight: $fw-500;
 				color: inherit;
+
+				&::after {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+				}
 			}
 		}
 		
 		.more-info__btn {
 			border: none;
 			background-color: transparent;
-			justify-self: end;
+			cursor: pointer;
+			z-index: 4;
+			position: relative;
+
+			
+			&.hovered svg path {
+				fill: $white;
+			}
 		}
 	}
 
@@ -316,6 +343,7 @@ ul[role="tablist"] {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		flex-wrap: wrap;
 
 		@include breakpoint(tablet) {
 			flex-direction: column;
