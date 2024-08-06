@@ -9,7 +9,26 @@ async function init() {
   data.forEach(createTimeData);
 
   tabs.forEach((tab) => {
-    tab.addEventListener('click',(e) =>  switchTabs(e, data));
+    tab.addEventListener('click',(e) =>  {
+      e.preventDefault();
+      const selectedTab = e.currentTarget;
+      const currentTab = tabList.querySelector('[aria-selected]');
+      switchTabs(selectedTab, currentTab, data)
+    });
+
+    // KEYBOARD ACCESSIBILITY
+    // tab.addEventListener('keydown', (e) => {
+    //   let index = Array.prototype.indexOf.call(tabs, e.currentTarget);
+
+    //   let dir = e.which === 37 ? index - 1 : e.which === 39 ? index + 1 : e.which === 40 ? 'down' : null;
+
+    //   if (dir !== null) {
+    //     e.preventDefault();
+
+    //     dir === 'down' ? tabs[dir] : switchTabs(e.currentTarget, tabs[dir], data) ? void 0 : ''
+    //   }
+
+    // });
   });
 
   const cardContents = document.querySelectorAll('.card__content');
@@ -82,10 +101,7 @@ const createCardElement = (title, timeFrame, selectedTimeFrame) => {
   return html;
 };
 
-const switchTabs = (e, data) => {
-  e.preventDefault();
-  const selectedTab = e.currentTarget;
-  const currentTab = tabList.querySelector('[aria-selected]');
+const switchTabs = (selectedTab, currentTab, data) => {
   if (selectedTab !== currentTab) {
     selectedTab.focus();
 
