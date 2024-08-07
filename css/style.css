@@ -97,7 +97,7 @@ body {
   }
 }
 main {
-  margin-block-start: 5rem;
+  margin-block: 5rem;
   display: grid;
   row-gap: 1.5rem;
   padding-inline: 1.5rem;
