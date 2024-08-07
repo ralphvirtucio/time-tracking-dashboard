@@ -17,18 +17,26 @@ async function init() {
     });
 
     // KEYBOARD ACCESSIBILITY
-    // tab.addEventListener('keydown', (e) => {
-    //   let index = Array.prototype.indexOf.call(tabs, e.currentTarget);
+  //   tab.addEventListener('keydown', (e) => {
+  //     let index = Array.prototype.indexOf.call(tabs, e.currentTarget);
+      
+  //     let dir = e.which === 38 ? 'up' : 39 ? 'down' : null;
 
-    //   let dir = e.which === 37 ? index - 1 : e.which === 39 ? index + 1 : e.which === 40 ? 'down' : null;
 
-    //   if (dir !== null) {
-    //     e.preventDefault();
+  //     // if(e.which === 38) {
 
-    //     dir === 'down' ? tabs[dir] : switchTabs(e.currentTarget, tabs[dir], data) ? void 0 : ''
-    //   }
+  //     // }
+  //     // let dir = e.which === 38 ? index - 1 : e.which === 40 ? index + 1;
 
-    // });
+
+
+  //     if (dir !== null) {
+  //       e.preventDefault();
+
+  //       dir === 'down' ? tabs[dir] : switchTabs(e.currentTarget, tabs[dir], data) ? void 0 : ''
+  //     }
+
+  //   });
   });
 
   const cardContents = document.querySelectorAll('.card__content');
@@ -102,6 +110,7 @@ const createCardElement = (title, timeFrame, selectedTimeFrame) => {
 };
 
 const switchTabs = (selectedTab, currentTab, data) => {
+
   if (selectedTab !== currentTab) {
     selectedTab.focus();
 
@@ -121,6 +130,8 @@ const switchTabs = (selectedTab, currentTab, data) => {
       const selectedTabValue = selectedTab.textContent.toLowerCase()
       const selectedTimeFrame = res.timeframes[selectedTabValue]
       
+      
+
       const previousLabel = document.querySelectorAll('.previous__time-label')
       let previousLabelValue = ''
 
@@ -136,7 +147,6 @@ const switchTabs = (selectedTab, currentTab, data) => {
 
       current[i].textContent = selectedTimeFrame.current + 'hrs'
       previous[i].textContent = selectedTimeFrame.previous + 'hrs'
-
       
     })
   }
