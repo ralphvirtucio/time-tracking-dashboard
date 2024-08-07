@@ -16,27 +16,30 @@ async function init() {
       switchTabs(selectedTab, currentTab, data)
     });
 
-    // KEYBOARD ACCESSIBILITY
-  //   tab.addEventListener('keydown', (e) => {
-  //     let index = Array.prototype.indexOf.call(tabs, e.currentTarget);
-      
-  //     let dir = e.which === 38 ? 'up' : 39 ? 'down' : null;
+    
+       // KEYBOARD ACCESSIBILITY -------------------------
+          //   tab.addEventListener('keydown', (e) => {
+          //     let index = Array.prototype.indexOf.call(tabs, e.currentTarget);
+              
+
+          //     // if(e.which === 38) {
+
+          //     // }
+          //     // let dir = e.which === 38 ? index - 1 : e.which === 40 ? index + 1;
+
+          //     console
+          //     console.log(e.which)
 
 
-  //     // if(e.which === 38) {
+          //     if (dir !== null) {
+          //       e.preventDefault();
 
-  //     // }
-  //     // let dir = e.which === 38 ? index - 1 : e.which === 40 ? index + 1;
+          //       dir === 'down' ? tabs[dir] : switchTabs(e.currentTarget, tabs[dir], data) ? void 0 : ''
+          //     }
 
+          //   });
+      // END OF KEYBOARD ACCESSIBILITY -------------------------
 
-
-  //     if (dir !== null) {
-  //       e.preventDefault();
-
-  //       dir === 'down' ? tabs[dir] : switchTabs(e.currentTarget, tabs[dir], data) ? void 0 : ''
-  //     }
-
-  //   });
   });
 
   const cardContents = document.querySelectorAll('.card__content');
@@ -49,7 +52,7 @@ async function init() {
 
 async function fetchData() {
   try {
-    const response = await fetch('/data.json');
+    const response = await fetch('data.json');
 
     if (!response.ok) {
       throw new Error(`Something went wrong: ${response.status}`);
@@ -110,6 +113,8 @@ const createCardElement = (title, timeFrame, selectedTimeFrame) => {
 };
 
 const switchTabs = (selectedTab, currentTab, data) => {
+  console.log('selectedTab', selectedTab)
+  console.log('currentTab', currentTab)
 
   if (selectedTab !== currentTab) {
     selectedTab.focus();
