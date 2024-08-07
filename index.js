@@ -113,9 +113,6 @@ const createCardElement = (title, timeFrame, selectedTimeFrame) => {
 };
 
 const switchTabs = (selectedTab, currentTab, data) => {
-  console.log('selectedTab', selectedTab)
-  console.log('currentTab', currentTab)
-
   if (selectedTab !== currentTab) {
     selectedTab.focus();
 
@@ -124,8 +121,6 @@ const switchTabs = (selectedTab, currentTab, data) => {
     selectedTab.setAttribute('aria-selected', 'true');
     currentTab.removeAttribute('aria-selected');
     currentTab.setAttribute('tabindex', '-1');
-
-    tabPanel.setAttribute('aria-labelledby', selectedTab.textContent + ' Panel')
 
     document.title = selectedTab.textContent + ' | ' + ' TimeTDashboard'
 
